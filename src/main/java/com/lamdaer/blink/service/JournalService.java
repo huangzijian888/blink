@@ -3,6 +3,7 @@ package com.lamdaer.blink.service;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.lamdaer.blink.entity.Journal;
 import com.lamdaer.blink.vo.JournalVo;
+import com.lamdaer.blink.vo.LikeVo;
 
 /**
  * <p>
@@ -17,4 +18,18 @@ public interface JournalService extends IService<Journal> {
      * @return 期刊vo
      */
     JournalVo getLatest();
+    
+    /**
+     * 进行点赞
+     * @param likeVo
+     * @return
+     */
+    Boolean likeAdd(LikeVo likeVo);
+    
+    /**
+     * 取消点赞
+     * @param likeVo
+     * @return
+     */
+    Boolean cancelLike(LikeVo likeVo);
 }
